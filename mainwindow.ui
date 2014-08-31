@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>621</width>
+    <height>277</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(241, 242, 247);</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="leftMargin">
+        <number>5</number>
+       </property>
+       <property name="topMargin">
+        <number>5</number>
+       </property>
+       <property name="rightMargin">
+        <number>5</number>
+       </property>
+       <property name="bottomMargin">
+        <number>5</number>
+       </property>
+       <item>
+        <widget class="QWidget" name="widget_11" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="styleSheet">
+             <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Student Id</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="StudentIdEdit">
+            <property name="styleSheet">
+             <string notr="true">QLineEdit
+{
+	border-style : solid;
+    background-color: rgb(255, 255, 255);
+	font: 75 12pt &quot;Segoe UI&quot;;
+	border-color: rgb(213, 215, 218);
+	border-width: 1px;
+	padding: 2px;
+}
+
+QLineEdit:hover
+{
+	background-color: rgba(213, 215, 218,150);
+	border-style : solid;
+}
+
+QLineEdit:focus
+{
+	background-color: rgb(255, 255, 255);
+	border-style : solid;
+	border-color: rgb(11, 167, 237);
+	border-width: 1px;
+}</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_2" native="true">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QWidget" name="widget_3" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>50</height>
+             </size>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <property name="leftMargin">
+              <number>2</number>
+             </property>
+             <property name="topMargin">
+              <number>2</number>
+             </property>
+             <property name="rightMargin">
+              <number>2</number>
+             </property>
+             <property name="bottomMargin">
+              <number>2</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="styleSheet">
+                <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+               </property>
+               <property name="text">
+                <string>Server IP</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="IpAddressBar">
+               <property name="styleSheet">
+                <string notr="true">QLineEdit
+{
+	border-style : solid;
+    background-color: rgb(255, 255, 255);
+	font: 75 12pt &quot;Segoe UI&quot;;
+	border-color: rgb(213, 215, 218);
+	border-width: 1px;
+	padding: 2px;
+}
+
+QLineEdit:hover
+{
+	background-color: rgba(213, 215, 218,150);
+	border-style : solid;
+}
+
+QLineEdit:focus
+{
+	background-color: rgb(255, 255, 255);
+	border-style : solid;
+	border-color: rgb(11, 167, 237);
+	border-width: 1px;
+}</string>
+               </property>
+               <property name="text">
+                <string>127.0.0.1</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="PortName">
+               <property name="styleSheet">
+                <string notr="true">QLineEdit
+{
+	border-style : solid;
+    background-color: rgb(255, 255, 255);
+	font: 75 12pt &quot;Segoe UI&quot;;
+	border-color: rgb(213, 215, 218);
+	border-width: 1px;
+	padding: 2px;
+}
+
+QLineEdit:hover
+{
+	background-color: rgba(213, 215, 218,150);
+	border-style : solid;
+}
+
+QLineEdit:focus
+{
+	background-color: rgb(255, 255, 255);
+	border-style : solid;
+	border-color: rgb(11, 167, 237);
+	border-width: 1px;
+}</string>
+               </property>
+               <property name="text">
+                <string>9001</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="ConnectButton">
+               <property name="minimumSize">
+                <size>
+                 <width>80</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton
+{
+	background-color: rgb(11, 167, 237);
+	border-style: solid;
+	border-radius: 3px;
+	color: rgb(255, 255, 255);
+	font: 12pt &quot;Segoe UI&quot;;
+}
+
+QPushButton:hover
+{
+	background-color: rgb(15, 155, 218);
+}</string>
+               </property>
+               <property name="text">
+                <string>Connect</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_4" native="true">
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QWidget" name="widget_5" native="true">
+               <layout class="QVBoxLayout" name="verticalLayout_4">
+                <property name="spacing">
+                 <number>2</number>
+                </property>
+                <property name="leftMargin">
+                 <number>2</number>
+                </property>
+                <property name="topMargin">
+                 <number>2</number>
+                </property>
+                <property name="rightMargin">
+                 <number>2</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>2</number>
+                </property>
+                <item>
+                 <widget class="QWidget" name="widget_7" native="true">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_3">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="label_2">
+                     <property name="styleSheet">
+                      <string notr="true">font: 11pt &quot;Segoe UI&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string>Message From Server</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_8" native="true">
+                  <layout class="QVBoxLayout" name="verticalLayout_6">
+                   <item>
+                    <widget class="QPlainTextEdit" name="MessageCenter">
+                     <property name="readOnly">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_6" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>250</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_5">
+                <property name="leftMargin">
+                 <number>2</number>
+                </property>
+                <property name="topMargin">
+                 <number>2</number>
+                </property>
+                <property name="rightMargin">
+                 <number>2</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>2</number>
+                </property>
+                <item>
+                 <widget class="QWidget" name="widget_9" native="true">
+                  <layout class="QVBoxLayout" name="verticalLayout_7">
+                   <item>
+                    <widget class="QWidget" name="widget_10" native="true">
+                     <layout class="QHBoxLayout" name="horizontalLayout_4">
+                      <property name="leftMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <widget class="QLabel" name="label_3">
+                        <property name="styleSheet">
+                         <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string>Upload</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="UploadNewFileButton">
+                        <property name="minimumSize">
+                         <size>
+                          <width>34</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>34</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="cursor">
+                         <cursorShape>PointingHandCursor</cursorShape>
+                        </property>
+                        <property name="toolTip">
+                         <string>Upload</string>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton
+{
+    border-style: solid;
+	border-style: solid;
+    border-radius: 3px;
+    border-color: rgb(178,178,178);
+    border-width: 1px;
+}
+
+QPushButton:hover
+{
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                    stop: 0 #FFFFFF, stop: 0.35 #F4F4F4,
+                                    stop: 0.39999 #E7E7E7, stop: 0.6 #EFEFEF,
+                                    stop: 0.9 #F2F2F2, stop: 1 #FFFFFF);
+    border-style: solid;
+    border-radius: 3px;
+    border-color: rgb(178,178,178);
+    border-width: 1px;
+}</string>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="AllResource.qrc">
+                          <normaloff>:/Images/ic_ic_action_upload.png</normaloff>:/Images/ic_ic_action_upload.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>30</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_4">
+                     <property name="styleSheet">
+                      <string notr="true">font: 10pt &quot;Segoe UI&quot;;
+border-style: solid;
+border-width: 1px;</string>
+                     </property>
+                     <property name="text">
+                      <string>Selected Directory</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton_2">
+                  <property name="minimumSize">
+                   <size>
+                    <width>70</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton
+{
+	background-color: rgb(11, 167, 237);
+	border-style: solid;
+	border-radius: 3px;
+	color: rgb(255, 255, 255);
+	font: 12pt &quot;Segoe UI&quot;;
+}
+
+QPushButton:hover
+{
+	background-color: rgb(15, 155, 218);
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>Upload</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>621</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="AllResource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
