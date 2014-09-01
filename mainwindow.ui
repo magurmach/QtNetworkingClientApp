@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>621</width>
-    <height>277</height>
+    <width>638</width>
+    <height>418</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -402,6 +402,57 @@ QPushButton:hover
                        <number>0</number>
                       </property>
                       <item>
+                       <widget class="QPushButton" name="pushButton">
+                        <property name="minimumSize">
+                         <size>
+                          <width>34</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>34</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton
+{
+    border-style: solid;
+	border-style: solid;
+    border-radius: 3px;
+    border-color: rgb(178,178,178);
+    border-width: 1px;
+}
+
+QPushButton:hover
+{
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                    stop: 0 #FFFFFF, stop: 0.35 #F4F4F4,
+                                    stop: 0.39999 #E7E7E7, stop: 0.6 #EFEFEF,
+                                    stop: 0.9 #F2F2F2, stop: 1 #FFFFFF);
+    border-style: solid;
+    border-radius: 3px;
+    border-color: rgb(178,178,178);
+    border-width: 1px;
+}</string>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="AllResource.qrc">
+                          <normaloff>:/Images/1409522392_Bin_Empty.png</normaloff>:/Images/1409522392_Bin_Empty.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>30</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
                        <widget class="QLabel" name="label_3">
                         <property name="styleSheet">
                          <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
@@ -475,15 +526,44 @@ QPushButton:hover
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="label_4">
-                     <property name="styleSheet">
-                      <string notr="true">font: 10pt &quot;Segoe UI&quot;;
-border-style: solid;
-border-width: 1px;</string>
+                    <widget class="QScrollArea" name="scrollArea">
+                     <property name="widgetResizable">
+                      <bool>true</bool>
                      </property>
-                     <property name="text">
-                      <string>Selected Directory</string>
-                     </property>
+                     <widget class="QWidget" name="scrollAreaWidgetContents">
+                      <property name="geometry">
+                       <rect>
+                        <x>0</x>
+                        <y>0</y>
+                        <width>287</width>
+                        <height>169</height>
+                       </rect>
+                      </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_8">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QTreeView" name="FileListView">
+                         <property name="frameShape">
+                          <enum>QFrame::NoFrame</enum>
+                         </property>
+                         <attribute name="headerVisible">
+                          <bool>false</bool>
+                         </attribute>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
                     </widget>
                    </item>
                   </layout>
@@ -536,7 +616,7 @@ QPushButton:hover
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>621</width>
+     <width>638</width>
      <height>21</height>
     </rect>
    </property>

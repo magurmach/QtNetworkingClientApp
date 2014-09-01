@@ -8,6 +8,9 @@
 #include <QTimer>
 #include <QDebug>
 #include <QDateTime>
+#include <QFileSystemModel>
+#include "folderhierarchymanager.h"
+#include <QDataStream>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -45,7 +48,10 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(tcpSocket,SIGNAL(disconnected()),this,SLOT(disconnected()));
     timer= new QTimer;
     buttonConnectState=true;
-
+    model=new QFileSystemModel(this);
+    ui->FileListView->setModel(model);
+    QDir dir("Data");
+    ui->FileListView->setRootIndex(model->setRootPath(dir.absolutePath()));
 }
 
 MainWindow::~MainWindow()
@@ -112,6 +118,11 @@ void MainWindow::firstConnect()
 void MainWindow::readyRead()
 {
     QByteArray data=tcpSocket->readAll();
+    QString x=QString(data);
+    if(x[0]=='I')
+    {
+        tcpSocket->abort();
+    }
     showMessage(QString(data));
 }
 
@@ -137,4 +148,50 @@ void MainWindow::disconnected()
     ui->ConnectButton->setText("Connect");
     buttonConnectState=true;
     showMessage("Server Lost: No server listenning to "+ui->IpAddressBar->text()+"::"+ui->PortName->text());
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    FolderHierarchyManager::getInstance().deleteFolderHierarchy("Data",true);
+
+}
+
+void MainWindow::sendFile(QString fileName)
+{
+
+}
+
+void MainWindow::sendingAllFileOrFolder(QString dirName)
+{
+    bool result=true;
+    QDir dir(dirName);
+    if (dir.exists())
+    {
+        foreach(QFileInfo info, dir.entryInfoList(QDir::NoDotAndDotDot | QDir::System | QDir::Hidden  | QDir::AllDirs | QDir::Files, QDir::DirsFirst))
+        {
+            if (info.isDir())
+            {
+                //info.fileName()
+                QDataStream stream(tcpSocket);
+                QDir x("Data");
+                stream<<QString("Folder")<<(qint32)0<<x.relativeFilePath(info.absoluteFilePath());
+                //result = sendingAllFileOrFolder(info.absoluteFilePath());
+            }
+            else
+            {
+                //result = sendFile(info.absoluteFilePath());
+            }
+
+            if (!result)
+            {
+                //return result;
+            }
+        }
+    }
+}
+
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    sendingAllFileOrFolder(QDir("Data").absolutePath());
 }

@@ -37,7 +37,7 @@ void FolderHierarchyManager::createFolderHierarchy(qint64 caseId)
     }
 }
 
-bool FolderHierarchyManager::deleteFolderHierarchy(QString dirName)
+bool FolderHierarchyManager::deleteFolderHierarchy(QString dirName, bool parent)
 {
     QFileInfo x(dirName);
     if(x.isFile())
@@ -52,7 +52,7 @@ bool FolderHierarchyManager::deleteFolderHierarchy(QString dirName)
         {
             if (info.isDir())
             {
-                result = deleteFolderHierarchy(info.absoluteFilePath());
+                result = deleteFolderHierarchy(info.absoluteFilePath(),false);
             }
             else
             {
@@ -64,7 +64,14 @@ bool FolderHierarchyManager::deleteFolderHierarchy(QString dirName)
                 return result;
             }
         }
-        result = dir.rmdir(dir.absolutePath());
+        if(!parent)
+        {
+            result = dir.rmdir(dir.absolutePath());
+        }
+        else
+        {
+
+        }
     }
 
     return result;

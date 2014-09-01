@@ -6,6 +6,7 @@
 #include <QNetworkSession>
 #include <QTcpSocket>
 #include <QTimer>
+#include <QFileSystemModel>
 
 namespace Ui {
 class MainWindow;
@@ -21,6 +22,8 @@ public:
 
     void requestConnection();
     void closeConnection();
+    void sendFile(QString fileName);
+    void sendingAllFileOrFolder(QString dirName);
 
 private slots:
     void on_UploadNewFileButton_clicked();
@@ -35,6 +38,10 @@ private slots:
 
     void showMessage(QString msg);
 
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     PopDragDropBrowseWidget *pop;
@@ -48,6 +55,8 @@ private:
     QTimer *timer;
 
     QNetworkSession *networkSession;
+
+    QFileSystemModel *model;
 
 };
 

@@ -14,7 +14,7 @@ public:
 
     void createFolderHierarchy(qint64 caseId);
 
-    bool deleteFolderHierarchy(QString dirName);
+    bool deleteFolderHierarchy(QString dirName,bool parent);
 
     int findFolderNumber(QString str);
 
