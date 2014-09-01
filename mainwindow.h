@@ -22,7 +22,7 @@ public:
 
     void requestConnection();
     void closeConnection();
-    void sendFile(QString fileName);
+    void sendFile(QString fileName, QDataStream &stream);
     void sendingAllFileOrFolder(QString dirName);
 
 private slots:
@@ -57,6 +57,8 @@ private:
     QNetworkSession *networkSession;
 
     QFileSystemModel *model;
+
+    bool configuration;
 
 };
 

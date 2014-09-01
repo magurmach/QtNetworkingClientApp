@@ -52,6 +52,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->FileListView->setModel(model);
     QDir dir("Data");
     ui->FileListView->setRootIndex(model->setRootPath(dir.absolutePath()));
+    configuration=false;
 }
 
 MainWindow::~MainWindow()
@@ -117,6 +118,7 @@ void MainWindow::firstConnect()
 
 void MainWindow::readyRead()
 {
+    //if(configuration)
     QByteArray data=tcpSocket->readAll();
     QString x=QString(data);
     if(x[0]=='I')
@@ -156,15 +158,38 @@ void MainWindow::on_pushButton_clicked()
 
 }
 
-void MainWindow::sendFile(QString fileName)
+void MainWindow::sendFile(QString fileName,QDataStream &stream)
 {
+    QFile file(fileName);
+    file.open(QIODevice::ReadOnly);
+    QByteArray x;
+    qint32 sz;
+    while((x=file.read(512)).size()!=0)
+    {
+        tcpSocket->write(x);
+        tcpSocket->waitForBytesWritten();
+        //stream<<QString(x);
+    }
 
+    file.close();
+    showMessage(QFileInfo(fileName).fileName()+" Upload complete");
 }
 
 void MainWindow::sendingAllFileOrFolder(QString dirName)
 {
+    if(tcpSocket->state()==QAbstractSocket::ConnectedState)
+    {
+
+    }
+    else
+    {
+        showMessage("Not Connected to any server");
+        return;
+    }
     bool result=true;
     QDir dir(dirName);
+    QDataStream stream(tcpSocket);
+
     if (dir.exists())
     {
         foreach(QFileInfo info, dir.entryInfoList(QDir::NoDotAndDotDot | QDir::System | QDir::Hidden  | QDir::AllDirs | QDir::Files, QDir::DirsFirst))
@@ -172,13 +197,16 @@ void MainWindow::sendingAllFileOrFolder(QString dirName)
             if (info.isDir())
             {
                 //info.fileName()
-                QDataStream stream(tcpSocket);
                 QDir x("Data");
                 stream<<QString("Folder")<<(qint32)0<<x.relativeFilePath(info.absoluteFilePath());
                 //result = sendingAllFileOrFolder(info.absoluteFilePath());
+                sendingAllFileOrFolder(info.absoluteFilePath());
             }
             else
             {
+                QDir x("Data");
+                stream<<QString("File")<<(qint32)info.size()<<x.relativeFilePath(info.absoluteFilePath());
+                sendFile(info.absoluteFilePath(),stream);
                 //result = sendFile(info.absoluteFilePath());
             }
 
